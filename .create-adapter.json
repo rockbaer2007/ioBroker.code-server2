@@ -1,0 +1,41 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "code-server2",
+    "title": "Code-Server",
+    "description": "integrated code-server in iobroker admin ui",
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [
+        "tab"
+    ],
+    "type": "storage",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "push",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "nodeVersion": "20",
+    "adminUi": "json",
+    "tabReact": "no",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "releaseScript": "yes",
+    "devServer": "yes",
+    "devServerPort": 8081,
+    "indentation": "Space (4)",
+    "quotes": "single",
+    "authorName": "rockbaer",
+    "authorGithub": "rockbaer2007",
+    "authorEmail": "rockbaer2007@live.de",
+    "gitRemoteProtocol": "SSH",
+    "gitCommit": "yes",
+    "defaultBranch": "main",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.6.5"
+}

@@ -1,0 +1,132 @@
+{
+    "common": {
+        "name": "code-server2",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "Code-Server",
+            "de": "Code-Server",
+            "ru": "Кодовый сервер",
+            "pt": "Código-servidor",
+            "nl": "Code-server",
+            "fr": "Serveur de code",
+            "it": "Codice-server",
+            "es": "Servidor de código",
+            "pl": "Serwer kodu",
+            "uk": "Код-сервер",
+            "zh-cn": "代码服务器"
+        },
+        "desc": {
+            "en": "integrated code-server in iobroker admin ui",
+            "de": "Integrierter Code-Server in der IOBROKER-Administrator-Benutzeroberfläche",
+            "ru": "Интегрированный кодовый сервер в пользовательском интерфейсе администратора iObroker",
+            "pt": "servidor de código integrado na interface de usuário do IOBROKER",
+            "nl": "geïntegreerde code-server in iobroker admin ui",
+            "fr": "Serveur de code intégré dans l'interface utilisateur d'administration IOBroker",
+            "it": "Server di codice integrato nell'interfaccia utente di amministratore IoBroker",
+            "es": "servidor de código integrado en IOBroker Admin UI",
+            "pl": "Zintegrowany serwer kodu w interfejsie administratora IOBRoker",
+            "uk": "Інтегрований сервер коду в інтерфейсі адміністратора iObroker",
+            "zh-cn": "IOBROKR ADMID UI中的集成代码服务器"
+        },
+        "authors": [
+            "rockbaer <rockbaer2007@live.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "code-server2.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/rockbaer2007/ioBroker.code-server2/main/admin/code-server2.png",
+        "readme": "https://github.com/rockbaer2007/ioBroker.code-server2/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "storage",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "adminUI": {
+            "config": "json",
+            "tab": "materialize"
+        },
+        "adminTab": {
+            "singleton": true,
+            "name": {
+                "en": "Code-Server",
+                "de": "Code-Server",
+                "ru": "Кодовый сервер",
+                "pt": "Código-servidor",
+                "nl": "Code-server",
+                "fr": "Serveur de code",
+                "it": "Codice-server",
+                "es": "Servidor de código",
+                "pl": "Serwer kodu",
+                "uk": "Код-сервер",
+                "zh-cn": "代码服务器"
+            },
+            "link": "",
+            "fa-icon": "info"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": "7.0.23"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
