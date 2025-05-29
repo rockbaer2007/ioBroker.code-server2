@@ -1,18 +1,18 @@
-![Logo](admin/code-server2.png)
+![Logo](admin/code-server.png)
 # ioBroker.code-server2
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.code-server2.svg)](https://www.npmjs.com/package/iobroker.code-server2)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.code-server2.svg)](https://www.npmjs.com/package/iobroker.code-server2)
-![Number of Installations](https://iobroker.live/badges/code-server2-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/code-server2-stable.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.code-server.svg)](https://www.npmjs.com/package/iobroker.code-server)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.code-server.svg)](https://www.npmjs.com/package/iobroker.code-server)
+![Number of Installations](https://iobroker.live/badges/code-server-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/code-server-stable.svg)
 
-[![NPM](https://nodei.co/npm/iobroker.code-server2.png?downloads=true)](https://nodei.co/npm/iobroker.code-server2/)
+[![NPM](https://nodei.co/npm/iobroker.code-server.png?downloads=true)](https://nodei.co/npm/iobroker.code-server/)
 
-**Tests:** ![Test and Release](https://github.com/rockbaer2007/ioBroker.code-server2/workflows/Test%20and%20Release/badge.svg)
+**Tests:** ![Test and Release](https://github.com/rockbaer2007/ioBroker.code-server/workflows/Test%20and%20Release/badge.svg)
 
-## code-server2 adapter for ioBroker
+## code-server adapter for ioBroker
 
-integrated code-server in iobroker admin ui
+Integration extern Code-Server (VS-Code-Server) in IOBroker Admin UI
 
 ## Developer manual
 This section is intended for the developer. It can be deleted later.
@@ -25,13 +25,10 @@ You can check other adapters for examples or ask in the developer community. Usi
 ### Getting started
 
 You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.code-server2`
-
-1. Push all files to the GitHub repo. The creator has already set up the local repository for you:  
+1. Clone the repository from GitHub to a directory on your PC:
     ```bash
-    git push origin main
+    git clone https://github.com/rockbaer2007/ioBroker.code-server2
     ```
-1. Add a new secret under https://github.com/rockbaer2007/ioBroker.code-server2/settings/secrets. It must be named `AUTO_MERGE_TOKEN` and contain a personal access token with push access to the repository, e.g. yours. You can create a new token under https://github.com/settings/tokens.
 
 1. Head over to [main.js](main.js) and start programming!
 
@@ -43,6 +40,8 @@ check them out. If you're already experienced, you should also take a look at th
 Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
 | Script name | Description |
 |-------------|-------------|
+| `build` | Compile the React sources. |
+| `watch` | Compile the React sources and watch for changes. |
 | `test:js` | Executes the tests you defined in `*.test.js` files. |
 | `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
 | `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
@@ -51,6 +50,11 @@ Several npm scripts are predefined for your convenience. You can run them using 
 | `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
 | `translate` | Translates texts in your adapter to all required languages, see [`@iobroker/adapter-dev`](https://github.com/ioBroker/adapter-dev#manage-translations) for more details. |
 | `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
+
+### Configuring the compilation
+The adapter template uses [esbuild](https://esbuild.github.io/) to compile TypeScript and/or React code. You can configure many compilation settings 
+either in `tsconfig.json` or by changing options for the build tasks. These options are described in detail in the
+[`@iobroker/adapter-dev` documentation](https://github.com/ioBroker/adapter-dev#compile-adapter-files).
 
 ### Writing tests
 When done right, testing code is invaluable, because it gives you the 
@@ -79,16 +83,16 @@ To get your adapter released in ioBroker, please refer to the documentation
 of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
 
 ### Test the adapter manually with dev-server
-Since you set up `dev-server`, you can use it to run, test and debug your adapter.
+Please use `dev-server` to test and debug your adapter.
 
-You may start `dev-server` by calling from your dev directory:
+You may install and start `dev-server` by calling from your dev directory:
 ```bash
+npm install --global @iobroker/dev-server
+dev-server setup
 dev-server watch
 ```
 
-The ioBroker.admin interface will then be available at http://localhost:8081/
-
-Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#command-line) for more details.
+Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#readme) for more details.
 
 ## Changelog
 <!--
@@ -97,12 +101,12 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 -->
 
 ### **WORK IN PROGRESS**
-* (rockbaer) initial release
+* (Uwe Grimm) initial release
 
 ## License
 MIT License
 
-Copyright (c) 2025 rockbaer <rockbaer2007@live.de>
+Copyright (c) 2025 Uwe Grimm <rockbaer2007@live.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -120,4 +124,3 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
